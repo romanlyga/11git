@@ -1,0 +1,72 @@
+stackbitVersion: ~0.3.0
+ssgName: eleventy
+nodeVersion: '12'
+publishDir: _site
+dataDir: posts
+pagesDir: ''
+models:
+  page:
+    type: page
+    label: Page
+    folder: pages
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: layout
+        label: Layout
+      - type: boolean
+        name: hideTagsList
+        label: Hide Tags List
+      - type: object
+        name: eleventyNavigation
+        label: Eleventy Navigation
+        fields:
+          - type: string
+            name: key
+            label: Key
+          - type: number
+            name: weight
+            label: Weight
+            subtype: int
+  post:
+    type: page
+    label: Post
+    folder: posts
+    match: '*'
+    fields:
+      - type: string
+        name: author
+        label: Author
+      - type: string
+        name: title
+        label: Title
+      - type: date
+        name: date
+        label: Date
+      - type: string
+        name: description
+        label: Description
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+  posts:
+    type: data
+    label: Posts
+    file: posts.json
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
