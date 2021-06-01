@@ -4,12 +4,14 @@ nodeVersion: '12'
 publishDir: _site
 dataDir: posts
 pagesDir: ''
+cmsName: git
 models:
   page:
     type: page
     label: Page
     folder: pages
-    match: '*'
+    match:
+      - '*'
     fields:
       - type: string
         name: title
@@ -38,7 +40,8 @@ models:
     type: page
     label: Post
     folder: posts
-    match: '*'
+    match:
+      - '*'
     fields:
       - type: string
         name: author
